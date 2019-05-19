@@ -11,6 +11,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     {
         //$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         $target_folder="uploads/";
+
+        if(!file_exists($target_folder))
+        {
+            mkdir('uploads', 0777, true);
+
+        }
         $target_file=$target_folder.basename($_FILES["file"]["name"]);
         $allowed = array("png","jpg","jpeg","doc","docx","pdf","xls","zip","rar","txt");
         $ext= strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
