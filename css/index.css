@@ -1,0 +1,28 @@
+/*center class*/
+.cntr {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-70%);
+
+}
+
+.bg-img {
+    height: 457px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../media/backgroud_picture.jpg);
+    z-index: -1;
+    background-size: 746px;
+}
+
+#fileSelect{
+    font-size:30px;
+}
+
+@media (max-width:460px)
+{
+     #fileSelect{
+         font-size:23px;
+     }
+}
