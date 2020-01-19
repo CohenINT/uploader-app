@@ -1,0 +1,41 @@
+NodeJs NOTES:
+
+Callback hell is unwanted design pattern of asny programming.
+one callback after the other, massive.
+
+how to avoid:
+name the functions
+put those function in seperate
+like: 
+
+func1(){}
+func2(){}
+
+Also create different modules.
+
+
+stub is "like" implementation of function, just to see how it works with the final result.
+part of testing. not real implementation just experintal.
+
+
+How to secure cookie from  XSS attack?
+use HttpOnly and Secure attributes as addition to the cookies or simple use the express-cookie session on express.js
+
+
+=============
+
+
+child process:
+* defined in a differnt js file
+* work as a "cloned" something that can be used by parent aka process
+* can send data to parent
+* non blocking
+* const {fork}  = require( "child_process"); - > that how you call the class
+   and then : 	  const childProcess = fork ('./<someJsScriptToRunAsync.js>');
+   childProcess.send({"number":parseInt(req.query.number)})
+   childProcess.on("message",message => res.send(message)) => this is listening for any comeback response from the child
+*recommanded is to kill the process in the end.
+
+process:
+* parent and global process
+* 

@@ -18,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
         }
         $target_file=$target_folder.basename($_FILES["file"]["name"]);
-        $allowed = array("png","jpg","jpeg","doc","docx","pdf","xls","zip","rar","txt");
+        $allowed = array("png","jpg","jpeg","doc","docx","pdf","xls","zip","rar","txt","gif");
         $ext= strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         
         if(!in_array($ext,$allowed))
@@ -36,12 +36,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             die("Your file exceeds the allowed weight amount.");
         }
         
-        $externalContent = file_get_contents('http://checkip.dyndns.com/');
-        preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $externalContent, $m);
-        $externalIp = $m[1];
+        // $externalContent = file_get_contents('http://checkip.dyndns.com/');
+        // preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $externalContent, $m);
+        // $externalIp = $m[1];
 
         move_uploaded_file($_FILES["file"]["tmp_name"],"uploads/".$_FILES["file"]["name"]);
-        $link=$externalIp.":".PORT."/".PROJECT_FOLDER."/".UPLOAD_FOLDER."/".$_FILES["file"]["name"];
+        $link=HOST."/".PROJECT_FOLDER."/".UPLOAD_FOLDER."/".$_FILES["file"]["name"];
       $message_to_user="File uploaded successfully. Link:<br> "."<mark>$link</mark>";
       echo "<h3 style='font-size:35px;'> $message_to_user </h3>";
 

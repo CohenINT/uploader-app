@@ -1,6 +1,6 @@
 <?php
 
-define("PORT",4000);
-define("HOST","localhost");
-define("PROJECT_FOLDER","www/uploader-app");
+define("PORT",80);
+define("HOST","www.moshe-cohen.biz/");
+define("PROJECT_FOLDER","apps/uploader-app");
 define("UPLOAD_FOLDER","uploads");
